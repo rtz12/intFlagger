@@ -1,6 +1,8 @@
 var http = require('http'),
     fs = require('fs');
 
+var INTERVAL = 1100;
+
 var getJSON = function(path, callback) {
     http.get({
         host: 'api.4chan.org',
@@ -80,7 +82,7 @@ var getCountriesInThreads = function(threads, callback) {
                     callback(countries);
             });
         }        
-    }, 1100);
+    }, INTERVAL);
 };
 
 var threads = [],
@@ -126,4 +128,4 @@ var threads = [],
             }
         });
     }
-}, 1100);
+}, INTERVAL);
